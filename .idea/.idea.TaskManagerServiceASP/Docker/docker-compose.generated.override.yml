@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  backend:
+    build:
+      context: "C:\\Users\\Geb\\Desktop\\Project\\ASP.NET\\TaskManagerServiceASP"
+      dockerfile: "TaskManagerServiceASP/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net9.0/TaskManagerServiceASP.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "backend:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\Geb\\Desktop\\Project\\ASP.NET\\TaskManagerServiceASP\\TaskManagerServiceASP:/app:rw"
+    - "C:\\Users\\Geb\\Desktop\\Project\\ASP.NET\\TaskManagerServiceASP:/src:rw"
+    - "C:\\Users\\Geb\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"

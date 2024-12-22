@@ -1,0 +1,26 @@
+﻿services:
+  backend:
+    image: backend
+    build:
+      context: .
+      dockerfile: TaskManagerServiceASP/Dockerfile
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__MSSQL=Server=db;Database=TaskManager;User Id=TaskManager;Password=TaskManager;TrustServerCertificate=True
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=TaskManager
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+
+volumes:
+  mssql_data:
