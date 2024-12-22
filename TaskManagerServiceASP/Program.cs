@@ -16,6 +16,7 @@ builder.Services.AddDbContext<TaskManagerDbContext>(options =>
 });
 
 var app = builder.Build();
+app.MapGet("/", (TaskManagerDbContext db) => db.Tasks.ToList());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
