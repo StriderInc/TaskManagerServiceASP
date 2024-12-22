@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerServiceASP", "TaskManagerServiceASP\TaskManagerServiceASP.csproj", "{077B7E7C-2084-4F16-870E-415B0C20F486}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerServiceASP.DataAccess", "TaskManagerServiceASP.DataAccess\TaskManagerServiceASP.DataAccess.csproj", "{EFED0861-8CB6-4091-AC34-DD15F9D34C78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerServiceASP.Core", "TaskManagerServiceASP.Core\TaskManagerServiceASP.Core.csproj", "{1B46B77B-E740-4F2B-8908-31AC20B4E823}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{077B7E7C-2084-4F16-870E-415B0C20F486}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{077B7E7C-2084-4F16-870E-415B0C20F486}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{077B7E7C-2084-4F16-870E-415B0C20F486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFED0861-8CB6-4091-AC34-DD15F9D34C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFED0861-8CB6-4091-AC34-DD15F9D34C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFED0861-8CB6-4091-AC34-DD15F9D34C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFED0861-8CB6-4091-AC34-DD15F9D34C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B46B77B-E740-4F2B-8908-31AC20B4E823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B46B77B-E740-4F2B-8908-31AC20B4E823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B46B77B-E740-4F2B-8908-31AC20B4E823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B46B77B-E740-4F2B-8908-31AC20B4E823}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
