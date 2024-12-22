@@ -9,6 +9,8 @@ public class TaskModel(
     TaskLevel taskLevel = TaskLevel.Easy
 )
 {
+    public const byte MAX_TITLE_LENGTH = 250;
+    
     public Guid Id { get; } = id;
     public string Title { get; } = title;
     public string Description { get; } = description;
