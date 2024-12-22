@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TaskManagerServiceASP.Core.Model;
+using TaskManagerServiceASP.DataAccess.Entity;
 
 namespace TaskManagerServiceASP.DataAccess;
 
@@ -11,5 +11,5 @@ public class TaskManagerDbContext: DbContext
         Database.EnsureCreated();
     }
     
-    public DbSet<TaskModel> Tasks { get; set; }
+    public DbSet<TaskEntity> Tasks { get; set; }
 }
