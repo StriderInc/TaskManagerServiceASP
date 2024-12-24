@@ -18,6 +18,15 @@ builder.Services.AddDbContext<TaskManagerDbContext>(options =>
 
 var app = builder.Build();
 
+// Проверка подключения к базе данных
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<TaskManagerDbContext>();
+    Console.WriteLine(dbContext.Database.CanConnect()
+        ? "Подключение к базе данных успешно."
+        : "Не удалось подключиться к базе данных.");
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

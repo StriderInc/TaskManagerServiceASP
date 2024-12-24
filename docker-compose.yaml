@@ -5,22 +5,26 @@
       context: .
       dockerfile: TaskManagerServiceASP/Dockerfile
     depends_on:
-      - db
+      - mssql
     environment:
-      - ConnectionStrings__MSSQL=Server=db;Database=ToDo;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=True
+      - ConnectionStrings__MSSQL=Server=mssql;Database=ToDo;User Id=sa;Password=Passw0rd;TrustServerCertificate=True
     ports:
       - "8080:8080"
       - "8081:8081"
-
-  db:
+  
+  mssql:
+    container_name: mssql-db
+    hostname: mssql-db
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=YourStrong@Passw0rd
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: 'Passw0rd'
+      MSSQL_DATA_DIR: /var/opt/mssql/data
+      MSSQL_PID: 'Developer'
+      MSSQL_TCP_PORT: 1433
     ports:
       - "1433:1433"
     volumes:
-      - mssql_data:/var/opt/mssql
-
-volumes:
-  mssql_data:
+      - ./data:/var/opt/mssql/data
+      - ./log:/var/opt/mssql/log
+      - ./secrets:/var/opt/mssql/secrets

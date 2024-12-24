@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="master@localhost" uuid="8a70d245-4239-4ec3-8ccb-022616bb1ccb">
+    <data-source source="LOCAL" name="ToDo@localhost" uuid="bdc0841e-687d-4b6f-aa09-38f5ce18b3db">
       <driver-ref>sqlserver.jb</driver-ref>
       <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.jetbrains.jdbc.sqlserver.SqlServerDriver</jdbc-driver>
-      <jdbc-url>Server=localhost,1433;Database=master</jdbc-url>
+      <jdbc-url>Server=localhost,1433;Database=ToDo;TrustServerCertificate=True;User Id=sa;Password=Passw0rd;</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
