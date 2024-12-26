@@ -1,4 +1,5 @@
-﻿services:
+﻿version: '3.9'
+services:
   backend:
     image: backend
     build:
@@ -6,25 +7,20 @@
       dockerfile: TaskManagerServiceASP/Dockerfile
     depends_on:
       - mssql
-    environment:
-      - ConnectionStrings__MSSQL=Server=mssql;Database=ToDo;User Id=sa;Password=Passw0rd;TrustServerCertificate=True
     ports:
       - "8080:8080"
       - "8081:8081"
   
   mssql:
     container_name: mssql-db
-    hostname: mssql-db
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
       ACCEPT_EULA: 'Y'
       MSSQL_SA_PASSWORD: 'Passw0rd'
-      MSSQL_DATA_DIR: /var/opt/mssql/data
-      MSSQL_PID: 'Developer'
-      MSSQL_TCP_PORT: 1433
     ports:
       - "1433:1433"
     volumes:
-      - ./data:/var/opt/mssql/data
-      - ./log:/var/opt/mssql/log
-      - ./secrets:/var/opt/mssql/secrets
+      - db_data:/var/opt/mssql
+
+volumes:
+  db_data:
